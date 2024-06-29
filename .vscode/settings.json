@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "tên connectionId của các bạn",
+        "projectKey": "q4quang_AIO-2024"
+    }
+}
