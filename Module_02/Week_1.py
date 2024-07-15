@@ -10,8 +10,8 @@ print("Result 1st: ", arr)
 
 # Câu hỏi 2
 arr = np.ones((3, 3)) > 0
-# arr = np.ones((3 ,3), dtype = bool)
-# arr = np.full((3 ,3), fill_value = True, dtype = bool)
+arr = np.ones((3 ,3), dtype = bool)
+arr = np.full((3 ,3), fill_value = True, dtype = bool)
 print("Result 2nd: ", arr)
 
 # Câu hỏi 3
