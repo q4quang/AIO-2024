@@ -10,8 +10,8 @@ print("Result 1st: ", arr)
 
 # Câu hỏi 2
 arr = np.ones((3, 3)) > 0
-arr = np.ones((3 ,3), dtype = bool)
-arr = np.full((3 ,3), fill_value = True, dtype = bool)
+arr = np.ones((3, 3), dtype=bool)
+arr = np.full((3, 3), fill_value=True, dtype=bool)
 print("Result 2nd: ", arr)
 
 # Câu hỏi 3
@@ -93,7 +93,7 @@ def convert_to_grayscale(img: np.ndarray, method: str) -> np.ndarray:
 
 
 def plot_images(orig_img: np.ndarray, gray_img: np.ndarray, method: str) -> None:
-    fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+    _, axes = plt.subplots(1, 2, figsize=(12, 6))
 
     axes[0].imshow(orig_img)
     axes[0].set_title('Original Image')
@@ -122,7 +122,7 @@ plot_images(img, img_gray, method=method)
 method = 'Luminosity'
 img_gray = convert_to_grayscale(img, method=method)
 print(img_gray[0, 0])
-plot_images(img, img_gray, method=method) 
+plot_images(img, img_gray, method=method)
 
 # Bài tập 3: Dữ liệu dạng bảng
 # Câu hỏi 15
