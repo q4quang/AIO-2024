@@ -4,7 +4,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import numpy as np
-arr = np . arange(0, 10, 1)
+
+arr = np.arange(0, 10, 1)
 print("Result 1st: ", arr)
 
 # Câu hỏi 2
@@ -68,10 +69,7 @@ b = np.array([6, 3, 4, 8, 9, 7, 1])
 print("Result 11th:", np.where(a < b, b, a))
 
 # Bài tập 2: Xử lý ảnh
-# Câu hỏi 12
-!gdown 1i9dqan21DjQoG5Q_VEvm0LrVwAlXD0vB
-!mkdir data
-!mv dog.jpeg data
+# Câu hỏi 12, 13, 14
 
 
 def convert_to_grayscale(img: np.ndarray, method: str) -> np.ndarray:
@@ -109,7 +107,7 @@ def plot_images(orig_img: np.ndarray, gray_img: np.ndarray, method: str) -> None
     plt.show()
 
 
-img = mpimg.imread('data/dog.jpeg')
+img = mpimg.imread('Module_02/dog.jpeg')
 
 method = 'Lightness'
 img_gray = convert_to_grayscale(img, method=method)
@@ -124,44 +122,33 @@ plot_images(img, img_gray, method=method)
 method = 'Luminosity'
 img_gray = convert_to_grayscale(img, method=method)
 print(img_gray[0, 0])
-plot_images(img, img_gray, method=method)
+plot_images(img, img_gray, method=method) 
 
-# Câu hỏi 13
+# Bài tập 3: Dữ liệu dạng bảng
+# Câu hỏi 15
 
-!gdown 1iA0WmVfW88HyJvTBSQDI5vesf-pgKabq
-!mv advertising.csv data
-
-df = pd.read_csv('data/advertising.csv')
+df = pd.read_csv('Module_02/advertising.csv')
 df.head()
 
 data = df.to_numpy()
 
-print(np.max(data[:, 3]))
+print("Max:", np.max(data[:, 3]))
 print(np.argmax(data[:, 3]))
 
-# Câu hỏi 14
-np.mean(data[:, 0])
-
-# Câu hỏi 15
-np.sum(data[:, 3] >= 20)
-
 # Câu hỏi 16
-sales_mask = data[:, 3] >= 15
-np.mean(data[sales_mask, 1])
+print("TV mean:", np.mean(data[:, 0]))
 
 # Câu hỏi 17
-newspaper_col = data[:, 2]
-mean_newspaper = np.mean(newspaper_col)
-np.sum(data[newspaper_col > mean_newspaper, 3])
+print("Sales >= 20:", np.sum(data[:, 3] >= 20))
 
 # Câu hỏi 18
 sales_mask = data[:, 3] >= 15
-np.mean(data[sales_mask, 1])
+print("18th", np.mean(data[sales_mask, 1]))
 
 # Câu hỏi 19
 newspaper_col = data[:, 2]
 mean_newspaper = np.mean(newspaper_col)
-np.sum(data[newspaper_col > mean_newspaper, 3])
+print("19th", np.sum(data[newspaper_col > mean_newspaper, 3]))
 
 # Câu hỏi 20
 
@@ -188,11 +175,11 @@ scores = np.where(
     )
 )
 
-scores[7:10]
+print("20th", scores[7:10])
 
 # Câu hỏi 21
 nearest_sales = np.abs(data[:, 3] - mean_sales).argmin()
 nearest_sales = data[nearest_sales, 3]
 
 scores = np.array([get_score(value, nearest_sales) for value in data[:, 3]])
-scores[7:10]
+print("21st", scores[7:10])
