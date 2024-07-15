@@ -44,7 +44,7 @@ print(np.tile(arr, 3))
 
 # Câu hỏi 9
 a = np.array([2, 6, 1, 9, 10, 3, 27])
-index = np.where((a >= 5) & (a <= 10))
+index = np.nonzero((a >= 5) & (a <= 10))
 print("Result 9th:", a[index])
 
 # Câu hỏi 10
@@ -82,7 +82,7 @@ def convert_to_grayscale(img: np.ndarray, method: str) -> np.ndarray:
     if method == 'lightness':
         return 0.5 * np.max(img, axis=-1) + 0.5 * np.min(img, axis=-1)
     elif method == 'average':
-        # return 0.33 * img[..., 0] + 0.33*img[..., 1] + 0.33*img[..., 2]
+        # 0.33 * img[..., 0] + 0.33*img[..., 1] + 0.34*img[..., 2]
         return np.mean(img, axis=-1)
     elif method == 'luminosity':
         luminosity_values = [0.21, 0.72, 0.07]
