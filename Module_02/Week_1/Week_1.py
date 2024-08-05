@@ -71,7 +71,6 @@ print("Result 11th:", np.where(a < b, b, a))
 # Bài tập 2: Xử lý ảnh
 # Câu hỏi 12, 13, 14
 
-
 def convert_to_grayscale(img: np.ndarray, method: str) -> np.ndarray:
     if len(img.shape) != 3 or img.shape[2] != 3:
         raise ValueError("Input image must have 3 color channels (RGB).")
