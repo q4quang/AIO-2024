@@ -19,7 +19,9 @@ def prediction_play_tennis(X, list_x_name, prior_probability, conditional_probab
     return y_pred
 
 
+#X = ['Rain', 'Mild', 'High', 'Strong']
 X = ['Sunny', 'Cool', 'High', 'Strong']
+
 pred = prediction_play_tennis(
     X, list_x_name, prior_probability, conditional_probability)
 
